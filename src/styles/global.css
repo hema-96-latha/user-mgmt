@@ -1,0 +1,165 @@
+:root {
+  --bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --border: #d0d0d0;
+  --text: #111111;
+  --text-muted: #555555;
+  --accent: #333333;
+  --accent-muted: #eeeeee;
+  --accent-hover: #000000;
+  --danger: #cc0000;
+  --danger-muted: #fff0f0;
+  --sidebar-bg: #1a1a1a;
+  --sidebar-text: #cccccc;
+  --sidebar-active: #ffffff;
+  --input-bg: #ffffff;
+  --table-head-bg: #eeeeee;
+  --table-row-even: #ffffff;
+  --table-row-odd: #f9f9f9;
+  --table-row-hover: #eeeeee;
+}
+
+[data-theme="dark"] {
+  --bg: #111111;
+  --card-bg: #1e1e1e;
+  --border: #333333;
+  --text: #f0f0f0;
+  --text-muted: #999999;
+  --accent: #dddddd;
+  --accent-muted: #2a2a2a;
+  --accent-hover: #ffffff;
+  --danger: #ff4444;
+  --danger-muted: #2a0000;
+  --sidebar-bg: #0a0a0a;
+  --sidebar-text: #888888;
+  --sidebar-active: #ffffff;
+  --input-bg: #1e1e1e;
+  --table-head-bg: #111111;
+  --table-row-even: #1e1e1e;
+  --table-row-odd: #181818;
+  --table-row-hover: #2a2a2a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.2s, color 0.2s;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-muted);
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text);
+  transition: opacity 0.15s;
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.btn-primary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-danger { background: var(--card-bg); color: var(--danger); border-color: var(--danger); }
+.btn-danger:hover:not(:disabled) { background: var(--danger-muted); }
+.btn-ghost { background: transparent; }
+.btn-ghost:hover:not(:disabled) { background: var(--accent-muted); }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+thead tr {
+  background: var(--table-head-bg);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--table-row-even);
+}
+
+tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+}
+
+tbody tr:hover {
+  background: var(--table-row-hover);
+}aside a[aria-current="page"] {
+  background: #444444 !important;
+  color: #ffffff !important;
+}
+
+aside a {
+  color: var(--sidebar-text) !important;
+  text-decoration: none !important;
+}
+
+aside a:hover {
+  background: #333333 !important;
+  color: #ffffff !important;
+}
